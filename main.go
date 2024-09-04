@@ -7,12 +7,12 @@ import (
 )
 
 func main() {
-	lines := flag.Int("n", 5, "number of lines to display")
-	follow := flag.Bool("f", false, "follow the file for new lines")
+	lines := flag.Int("n", 6, "number of lines to display in the terminal")
+	follow := flag.Bool("f", false, "follow the log file for new lines")
 	flag.Parse()
 
 	if len(flag.Args()) < 1 {
-		fmt.Println("Error: Please provide a filename")
+		fmt.Println("Error from logTail: Please provide a filename")
 		os.Exit(1)
 	}
 	filename := flag.Args()[0]
@@ -28,5 +28,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	runBtailApp(tail)
+	runLogTailApp(tail)
 }

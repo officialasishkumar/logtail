@@ -1,4 +1,4 @@
-module github.com/galalen/btail
+module github.com/officialasishkumar/logTail
 
 go 1.21.1
 

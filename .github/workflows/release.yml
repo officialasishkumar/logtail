@@ -25,10 +25,10 @@ jobs:
 
       - name: Build binaries
         run: |
-          GOOS=linux GOARCH=amd64 go build -o btail-linux-amd64 .
-          GOOS=linux GOARCH=arm64 go build -o btail-linux-arm64 .
-          GOOS=darwin GOARCH=amd64 go build -o btail-darwin-amd64 .
-          GOOS=darwin GOARCH=arm64 go build -o btail-darwin-arm64 .
+          GOOS=linux GOARCH=amd64 go build -o logtail-linux-amd64 .
+          GOOS=linux GOARCH=arm64 go build -o logtail-linux-arm64 .
+          GOOS=darwin GOARCH=amd64 go build -o logtail-darwin-amd64 .
+          GOOS=darwin GOARCH=arm64 go build -o logtail-darwin-arm64 .
 
       - name: Create Releases
         id: create_releases
@@ -37,7 +37,7 @@ jobs:
         run: |
           gh release create ${{ github.ref_name }} \
             --title "${{ github.ref_name }}" \
-            btail-linux-amd64 \
-            btail-linux-arm64 \
-            btail-darwin-amd64 \
-            btail-darwin-arm64
+            logtail-linux-amd64 \
+            logtail-linux-arm64 \
+            logtail-darwin-amd64 \
+            logtail-darwin-arm64

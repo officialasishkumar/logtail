@@ -140,7 +140,7 @@ func (m *model) updateLogsView() {
 }
 
 func (m model) View() string {
-	title := titleStyle.Render("btail 🐝")
+	title := titleStyle.Render("logTail 🐝")
 
 	var statusBar string
 	if m.searching {
@@ -178,7 +178,7 @@ func (m model) tailFile() tea.Cmd {
 	}
 }
 
-func runBtailApp(tail *Tail) {
+func runLogTailApp(tail *Tail) {
 	p := tea.NewProgram(initialModel(tail), tea.WithAltScreen())
 	if _, err := p.Run(); err != nil {
 		log.Fatal(err)
