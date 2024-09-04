@@ -14,10 +14,10 @@ go install github.com/officialasishkumar/logTail@latest
 ## Usage
 Basic usage:
 Options:
-- `-n <number>`: Set the number of lines to display (default: 5)
+- `-n <number>`: Set the number of lines to display (default: 6)
 - `-f`: Enable follow mode to watch for new lines
 
 Examples:
 ```bash
-logtail -n 10 -f path/to/file.log
+logTail -n 10 -f path/to/file.log
 ```
